@@ -1,0 +1,389 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(204, 112, 0);
+}
+
+#pass{
+    background-color: green;
+    border: 2px darkgreen solid;
+    width: 220px;
+    height: 80px;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 30px;
+    left: -39%;
+    top: -1%;
+    position: relative;
+    rotate: -90deg;
+}
+
+#pass:hover{
+    background-color: rgb(13, 146, 13);
+}
+
+#pass:active{
+    background-color: rgb(18, 187, 18);
+}
+#center{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#center h1{
+    position: absolute;
+    rotate: 0deg;
+    font-size: 80px;
+    transition: rotate 0.2s ease-in-out;
+    color: red;
+    align-self: center;
+    left: 35%;
+}
+
+#menu1{
+    position: absolute;
+    width: 70%;
+    height: 16%;
+    border: 2px black solid;
+    top: 80%;
+    border-radius: 5px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(243, 88, 96);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    box-shadow: 3px 3px 10px 3px rgba(218, 23, 23, 0.74);
+    scale: 1.1;
+    transition: scale 0.3s ease-in-out;
+}
+
+#dp1{
+    width: 60%;
+    height: 35%;
+    border-bottom: 2px black solid;
+    border-right: 2px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#p1{
+    height: 35%;
+    width: 40%;
+    border-bottom: 2px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: rgb(179, 31, 31);
+}
+
+#dpup1{
+    width: 4.3vh;
+    height: 80%;
+    border: 2px black solid;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+#dpdown1{
+    width: 4.3vh;
+    height: 80%;
+    border: 2px black solid;
+    display: flex;
+    align-items: center;
+}
+
+.triangle{
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    width: 60%;
+    height: 60%;
+    background-color: rgb(12, 112, 25);
+    top: 30%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+#downtriangle{
+    rotate: 180deg;
+    top: -25%;
+    left: -10%;
+}
+
+#dpup1:hover, #dpdown1:hover{
+    background-color:rgb(228, 95, 101);
+}
+
+#dpup1:active, #dpdown1:active{
+    background-color: rgb(187, 76, 82);
+}
+
+#lp1{
+    font-size: 45px;
+    margin-left: 20px;
+}
+
+#dpnum1{
+    color: rgb(23, 117, 23);
+}
+
+#lpmenu1{
+    width: 40%;
+    height: 50%;
+    border: 2px black solid;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+#top1{
+    border-bottom: 2px black solid;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#add500n1, #add100n1, #add50n1{
+    width: 25%;
+    height: 80%;
+    border: 2px black solid;
+    text-align: center;
+}
+
+#bottom1{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.lptriangle{
+    width: 45%;
+    height: 80%;
+    background-color: green;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+#lpup1{
+    height: 100%;
+    width: 50%;
+    border-right: 2px black solid;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#lpdown1{
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#lpup1:hover, #lpdown1:hover{
+    background-color: rgb(228, 95, 101);
+}
+
+#lpup1:active, #lpdown1:active{
+    background-color: rgb(187, 76, 82);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#menu2 {
+    position: absolute;
+    width: 70%;
+    height: 16%;
+    border: 2px black solid;
+    top: 17%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(180deg);
+    border-radius: 5px;
+    background-color: rgb(118, 120, 219);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 600px;
+    box-shadow: 3px 3px 10px 3px rgba(36, 23, 218, 0.74);
+    scale: 1;
+    transition: scale 0.3s ease-in-out;
+}
+
+#dp2{
+    width: 60%;
+    height: 35%;
+    border-bottom: 2px black solid;
+    border-right: 2px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#p2{
+    height: 35%;
+    width: 40%;
+    border-bottom: 2px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: rgb(75, 30, 236);
+}
+
+#dpup2{
+    width: 4.3vh;
+    height: 80%;
+    border: 2px black solid;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+#dpdown2{
+    width: 4.3vh;
+    height: 80%;
+    border: 2px black solid;
+    display: flex;
+    align-items: center;
+}
+
+.triangle{
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    width: 60%;
+    height: 60%;
+    background-color: rgb(12, 112, 25);
+    top: 30%;
+    left: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+#downtriangle{
+    rotate: 180deg;
+    top: -25%;
+    left: -10%;
+}
+
+#dpup2:hover, #dpdown2:hover{
+    background-color: rgb(113, 114, 219);
+}
+
+#dpup2:active, #dpdown2:active{
+    background-color: rgb(99, 101, 170);
+}
+
+#lp2{
+    font-size: 45px;
+    margin-left: 20px;
+}
+
+#dpnum2{
+    color: rgb(23, 117, 23);
+}
+
+#lpmenu2{
+    width: 40%;
+    height: 50%;
+    border: 2px black solid;
+    margin-left: 10px;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+#top2{
+    border-bottom: 2px black solid;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#add500n2, #add100n2, #add50n2{
+    width: 25%;
+    height: 80%;
+    border: 2px black solid;
+    text-align: center;
+}
+
+#bottom2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+}
+
+.lptriangle{
+    width: 45%;
+    height: 80%;
+    background-color: green;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+}
+
+#lpup2{
+    height: 100%;
+    width: 50%;
+    border-right: 2px black solid;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#lpdown2{
+    height: 100%;
+    width: 50%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+#add500n2:hover, #add100n2:hover, #add50n2:hover{
+    background-color: rgb(113, 114, 219);
+}
+
+#add500n1:hover, #add100n1:hover, #add50n1:hover{
+    background-color: rgb(221, 76, 83);
+}
+
+#add50n1{
+    backdrop-filter: brightness(.8);
+}
+
+#add50n2{
+    backdrop-filter: brightness(.8);
+}
+
+#lpup2:hover, #lpdown2:hover{
+    background-color: rgb(113, 114, 219);
+}
+
+#lpup2:active, #lpdown2:active{
+    background-color: rgb(95, 97, 163);
+}
+
+.lptriangledown{
+    rotate: 180deg;
+}

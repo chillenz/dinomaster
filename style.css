@@ -387,3 +387,18 @@ body{
 .lptriangledown{
     rotate: 180deg;
 }
+
+@media screen and (max-width: 500px) {
+    #lp2{
+        font-size: 30px;
+        flex-shrink: 1;
+        top: 10%;
+        position: relative;
+    }
+    #lp1{
+        position: relative;
+        top: 10%;
+        font-size: 30px;
+        flex-shrink: 1;
+    }
+}

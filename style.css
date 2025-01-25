@@ -1,5 +1,6 @@
 *{
     box-sizing: border-box;
+    font-family:monospace;
 }
 
 body{
@@ -7,6 +8,8 @@ body{
     height: 100vh;
     margin: 0;
     background-color: rgb(204, 112, 0);
+    overflow: hidden;
+    background-image: linear-gradient(180deg, rgb(245, 153, 41), rgb(136, 86, 25));
 }
 
 #pass{
@@ -18,7 +21,7 @@ body{
     border: none;
     border-radius: 15px;
     font-size: 30px;
-    left: -39%;
+    left: -34%;
     top: -1%;
     position: relative;
     rotate: -90deg;
@@ -48,7 +51,9 @@ body{
     transition: rotate 0.2s ease-in-out;
     color: red;
     align-self: center;
-    left: 35%;
+    left: calc(50%-40px);
+    font-family: arial;
+    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.185);
 }
 
 #menu1{
@@ -70,7 +75,7 @@ body{
 }
 
 #dp1{
-    width: 60%;
+    width: 75%;
     height: 35%;
     border-bottom: 2px black solid;
     border-right: 2px black solid;
@@ -80,8 +85,8 @@ body{
 }
 
 #p1{
+    width: 25%;
     height: 35%;
-    width: 40%;
     border-bottom: 2px black solid;
     display: flex;
     align-items: center;
@@ -133,8 +138,10 @@ body{
 }
 
 #lp1{
-    font-size: 45px;
+    font-size: 42px;
     margin-left: 20px;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 #dpnum1{
@@ -148,6 +155,9 @@ body{
     margin-left: 10px;
     flex-wrap: wrap;
     display: flex;
+    margin-left: auto;
+    margin-right: 5%;
+    max-width: 200px;
 }
 
 #top1{
@@ -178,6 +188,7 @@ body{
     height: 80%;
     background-color: green;
     clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    max-width: 35px;
 }
 
 #lpup1{
@@ -213,8 +224,6 @@ body{
 
 
 
-
-
 #menu2 {
     position: absolute;
     width: 70%;
@@ -234,7 +243,7 @@ body{
 }
 
 #dp2{
-    width: 60%;
+    width: 75%;
     height: 35%;
     border-bottom: 2px black solid;
     border-right: 2px black solid;
@@ -244,8 +253,8 @@ body{
 }
 
 #p2{
+    width: 25%;
     height: 35%;
-    width: 40%;
     border-bottom: 2px black solid;
     display: flex;
     align-items: center;
@@ -297,7 +306,7 @@ body{
 }
 
 #lp2{
-    font-size: 45px;
+    font-size: 42px;
     margin-left: 20px;
 }
 
@@ -312,6 +321,8 @@ body{
     margin-left: 10px;
     flex-wrap: wrap;
     display: flex;
+    margin-left: auto;
+    margin-right: 5%;
 }
 
 #top2{
@@ -394,11 +405,73 @@ body{
         flex-shrink: 1;
         top: 10%;
         position: relative;
+        margin-left: 5px;
     }
     #lp1{
         position: relative;
         top: 10%;
         font-size: 30px;
         flex-shrink: 1;
+        margin-left: 5px;
     }
+    #lpmenu1{
+        margin-right: 2%;
+    }
+    #lpmenu2{
+        margin-right: 2%;
+    }
+    #add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
+        font-size: 2px;
+    }
+}
+
+#add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+
+.triangledown{
+    background-color: rgb(9, 65, 7);
+}
+
+#nosecret{
+    position: absolute;
+    top: 100%;
+}
+
+#pcmode{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10%; 
+}
+
+#pc{
+    position: absolute;
+    font-size: 170%;
+    display: none;
+}
+
+#mobile{
+    position: absolute;
+    font-size: 170%;
+}
+
+#pcmode:hover{
+    filter: brightness(.9);
+}
+
+#pcmode:active{
+    filter: brightness(.7);
 }

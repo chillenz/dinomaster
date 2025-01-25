@@ -1,477 +1,171 @@
-*{
-    box-sizing: border-box;
-    font-family:monospace;
-}
+const button = document.getElementById('pass');
+const player = document.getElementById('player');
+let currentteam = '1';
+const add50n1 = document.getElementById('add50n1');
+const add100n1 = document.getElementById('add100n1');
+const add500n1 = document.getElementById('add500n1');
+const add50n2 = document.getElementById('add50n2');
+const add100n2 = document.getElementById('add100n2');
+const add500n2 = document.getElementById('add500n2');
+let redadd = 50;
+let blueadd = 50;
+let redlp = 2900;
+let bluelp = 2900;
+const lp1 = document.getElementById('lp1');
+const lp2 = document.getElementById('lp2');
+const menu1 = document.getElementById('menu1');
+const menu2 = document.getElementById('menu2');
+const dpup1 = document.getElementById('dpup1');
+const dpdown1 = document.getElementById('dpdown1');
+const dpup2 = document.getElementById('dpup2');
+const dpdown2 = document.getElementById('dpdown2');
+const lpup1 = document.getElementById('lpup1'); //done
+const lpdown1 = document.getElementById('lpdown1'); //done
+const lpup2 = document.getElementById('lpup2'); //done
+const lpdown2 = document.getElementById('lpdown2'); //done
+let reddp = 8;
+let bluedp = 8;
+const dpnum1 = document.getElementById('dpnum1');
+const dpnum2 = document.getElementById('dpnum2');
+const devicebutton = document.getElementById('pcmode')
+let currentMode = 'mob';
+const pc = document.getElementById('pc');
+const mobile = document.getElementById('mobile');
 
-body{
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    background-color: rgb(204, 112, 0);
-    overflow: hidden;
-    background-image: linear-gradient(180deg, rgb(245, 153, 41), rgb(136, 86, 25));
-}
-
-#pass{
-    background-color: green;
-    border: 2px darkgreen solid;
-    width: 220px;
-    height: 80px;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    font-size: 30px;
-    left: -34%;
-    top: -1%;
-    position: relative;
-    rotate: -90deg;
-}
-
-#pass:hover{
-    background-color: rgb(13, 146, 13);
-}
-
-#pass:active{
-    background-color: rgb(18, 187, 18);
-}
-#center{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#center h1{
-    position: absolute;
-    rotate: 0deg;
-    font-size: 80px;
-    transition: rotate 0.2s ease-in-out;
-    color: red;
-    align-self: center;
-    left: calc(50%-40px);
-    font-family: arial;
-    text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.185);
-}
-
-#menu1{
-    position: absolute;
-    width: 70%;
-    height: 16%;
-    border: 2px black solid;
-    top: 85%;
-    border-radius: 5px;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: rgb(243, 88, 96);
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 600px;
-    box-shadow: 3px 3px 10px 3px rgba(218, 23, 23, 0.74);
-    scale: 1.1;
-    transition: scale 0.3s ease-in-out;
-}
-
-#dp1{
-    width: 75%;
-    height: 35%;
-    border-bottom: 2px black solid;
-    border-right: 2px black solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#p1{
-    width: 25%;
-    height: 35%;
-    border-bottom: 2px black solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: rgb(179, 31, 31);
-}
-
-#dpup1{
-    width: 4.3vh;
-    height: 80%;
-    border: 2px black solid;
-    display: flex;
-    align-items: center;
-    margin: 10px;
-}
-
-#dpdown1{
-    width: 4.3vh;
-    height: 80%;
-    border: 2px black solid;
-    display: flex;
-    align-items: center;
-}
-
-.triangle{
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-    width: 60%;
-    height: 60%;
-    background-color: rgb(12, 112, 25);
-    top: 30%;
-    left: 50%;
-    position: relative;
-    transform: translate(-50%, -50%);
-}
-
-#downtriangle{
-    rotate: 180deg;
-    top: -25%;
-    left: -10%;
-}
-
-#dpup1:hover, #dpdown1:hover{
-    background-color:rgb(228, 95, 101);
-}
-
-#dpup1:active, #dpdown1:active{
-    background-color: rgb(187, 76, 82);
-}
-
-#lp1{
-    font-size: 42px;
-    margin-left: 20px;
-    flex-grow: 1;
-    flex-shrink: 1;
-}
-
-#dpnum1{
-    color: rgb(23, 117, 23);
-}
-
-#lpmenu1{
-    width: 40%;
-    height: 50%;
-    border: 2px black solid;
-    margin-left: 10px;
-    flex-wrap: wrap;
-    display: flex;
-    margin-left: auto;
-    margin-right: 5%;
-    max-width: 200px;
-}
-
-#top1{
-    border-bottom: 2px black solid;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#add500n1, #add100n1, #add50n1{
-    width: 25%;
-    height: 80%;
-    border: 2px black solid;
-    text-align: center;
-}
-
-#bottom1{
-    width: 100%;
-    height: 50%;
-    display: flex;
-}
-
-.lptriangle{
-    width: 45%;
-    height: 80%;
-    background-color: green;
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-    max-width: 35px;
-}
-
-#lpup1{
-    height: 100%;
-    width: 50%;
-    border-right: 2px black solid;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-#lpdown1{
-    height: 100%;
-    width: 50%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-#lpup1:hover, #lpdown1:hover{
-    background-color: rgb(228, 95, 101);
-}
-
-#lpup1:active, #lpdown1:active{
-    background-color: rgb(187, 76, 82);
-}
-
-
-
-
-
-
-
-
-
-
-#menu2 {
-    position: absolute;
-    width: 70%;
-    height: 16%;
-    border: 2px black solid;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(180deg);
-    border-radius: 5px;
-    background-color: rgb(118, 120, 219);
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 600px;
-    box-shadow: 3px 3px 10px 3px rgba(36, 23, 218, 0.74);
-    scale: 1;
-    transition: scale 0.3s ease-in-out;
-}
-
-#dp2{
-    width: 75%;
-    height: 35%;
-    border-bottom: 2px black solid;
-    border-right: 2px black solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#p2{
-    width: 25%;
-    height: 35%;
-    border-bottom: 2px black solid;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    color: rgb(75, 30, 236);
-}
-
-#dpup2{
-    width: 4.3vh;
-    height: 80%;
-    border: 2px black solid;
-    display: flex;
-    align-items: center;
-    margin: 10px;
-}
-
-#dpdown2{
-    width: 4.3vh;
-    height: 80%;
-    border: 2px black solid;
-    display: flex;
-    align-items: center;
-}
-
-.triangle{
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-    width: 60%;
-    height: 60%;
-    background-color: rgb(12, 112, 25);
-    top: 30%;
-    left: 50%;
-    position: relative;
-    transform: translate(-50%, -50%);
-}
-
-#downtriangle{
-    rotate: 180deg;
-    top: -25%;
-    left: -10%;
-}
-
-#dpup2:hover, #dpdown2:hover{
-    background-color: rgb(113, 114, 219);
-}
-
-#dpup2:active, #dpdown2:active{
-    background-color: rgb(99, 101, 170);
-}
-
-#lp2{
-    font-size: 42px;
-    margin-left: 20px;
-}
-
-#dpnum2{
-    color: rgb(23, 117, 23);
-}
-
-#lpmenu2{
-    width: 40%;
-    height: 50%;
-    border: 2px black solid;
-    margin-left: 10px;
-    flex-wrap: wrap;
-    display: flex;
-    margin-left: auto;
-    margin-right: 5%;
-}
-
-#top2{
-    border-bottom: 2px black solid;
-    width: 100%;
-    height: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-}
-
-#add500n2, #add100n2, #add50n2{
-    width: 25%;
-    height: 80%;
-    border: 2px black solid;
-    text-align: center;
-}
-
-#bottom2{
-    width: 100%;
-    height: 50%;
-    display: flex;
-}
-
-.lptriangle{
-    width: 45%;
-    height: 80%;
-    background-color: green;
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
-}
-
-#lpup2{
-    height: 100%;
-    width: 50%;
-    border-right: 2px black solid;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-#lpdown2{
-    height: 100%;
-    width: 50%;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-#add500n2:hover, #add100n2:hover, #add50n2:hover{
-    background-color: rgb(113, 114, 219);
-}
-
-#add500n1:hover, #add100n1:hover, #add50n1:hover{
-    background-color: rgb(221, 76, 83);
-}
-
-#add50n1{
-    backdrop-filter: brightness(.8);
-}
-
-#add50n2{
-    backdrop-filter: brightness(.8);
-}
-
-#lpup2:hover, #lpdown2:hover{
-    background-color: rgb(113, 114, 219);
-}
-
-#lpup2:active, #lpdown2:active{
-    background-color: rgb(95, 97, 163);
-}
-
-.lptriangledown{
-    rotate: 180deg;
-}
-
-@media screen and (max-width: 500px) {
-    #lp2{
-        font-size: 30px;
-        flex-shrink: 1;
-        top: 10%;
-        position: relative;
-        margin-left: 5px;
-    }
-    #lp1{
-        position: relative;
-        top: 10%;
-        font-size: 30px;
-        flex-shrink: 1;
-        margin-left: 5px;
-    }
-    #lpmenu1{
-        margin-right: 2%;
-    }
-    #lpmenu2{
-        margin-right: 2%;
-    }
-    #add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
-        font-size: 2px;
+function changeteam(){
+    if (currentteam==='1'){
+        player.textContent = 'P2';
+        currentteam = '2';
+        player.style.rotate = '180deg';
+        player.style.color = 'blue';
+        menu2.style.scale = '1.1';
+        menu1.style.scale = '1';
+    }else{
+        player.textContent = 'P1';
+        player.style.rotate = '0deg';
+        player.style.color = 'red';
+        currentteam = '1';
+        menu2.style.scale = '1';
+        menu1.style.scale = '1.1';
     }
 }
 
-#add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
-    font-size: 13px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+button.addEventListener('click', changeteam);
+
+function changeadd1(clicked) {
+    if (clicked === '50') {
+        add50n1.style.backdropFilter = 'brightness(0.8)';
+        add100n1.style.backdropFilter = 'brightness(1)';
+        add500n1.style.backdropFilter = 'brightness(1)';
+        redadd = 50;
+    } else if (clicked === '100') {
+        add50n1.style.backdropFilter = 'brightness(1)';
+        add100n1.style.backdropFilter = 'brightness(0.8)';
+        add500n1.style.backdropFilter = 'brightness(1)';
+        redadd = 100;
+    } else {
+        add50n1.style.backdropFilter = 'brightness(1)';
+        add100n1.style.backdropFilter = 'brightness(1)';
+        add500n1.style.backdropFilter = 'brightness(0.8)';
+        redadd = 500;
+    }
+}
+
+add50n1.addEventListener('click', () => changeadd1('50'));
+add100n1.addEventListener('click', () => changeadd1('100'));
+add500n1.addEventListener('click', () => changeadd1('500'));
+
+
+
+function changeadd2(clicked) {
+    if (clicked === '50') {
+        add50n2.style.backdropFilter = 'brightness(0.8)';
+        add100n2.style.backdropFilter = 'brightness(1)';
+        add500n2.style.backdropFilter = 'brightness(1)';
+        blueadd = 50;
+    } else if (clicked === '100') {
+        add50n2.style.backdropFilter = 'brightness(1)';
+        add100n2.style.backdropFilter = 'brightness(0.8)';
+        add500n2.style.backdropFilter = 'brightness(1)';
+        blueadd = 100;
+    } else {
+        add50n2.style.backdropFilter = 'brightness(1)';
+        add100n2.style.backdropFilter = 'brightness(1)';
+        add500n2.style.backdropFilter = 'brightness(0.8)';
+        blueadd = 500;
+    }
+}
+
+add50n2.addEventListener('click', () => changeadd2('50'));
+add100n2.addEventListener('click', () => changeadd2('100'));
+add500n2.addEventListener('click', () => changeadd2('500'));
+
+function lpdecrease(color){
+    if (color==='red'){
+        redlp -= redadd;
+        lp1.innerText = `LP:${redlp}`;
+    } else{
+        bluelp -= blueadd;
+        lp2.innerText = `LP:${bluelp}`;
+    }
+}
+
+lpdown1.addEventListener('click', () => lpdecrease('red'));
+lpdown2.addEventListener('click', () => lpdecrease('blue'));
+
+function lpincrease(color){
+    if (color==='red'){
+        redlp += redadd;
+        lp1.innerText = `LP:${redlp}`;
+    } else{
+        bluelp += blueadd;
+        lp2.innerText = `LP:${bluelp}`;
+    }
+}
+
+lpup1.addEventListener('click', () => lpincrease('red'));
+lpup2.addEventListener('click', () => lpincrease('blue'));
+
+function dpincrease(color){
+    if (color==='red'){
+        reddp += 1;
+        dpnum1.innerText = `DP:${reddp}`;
+    } else{
+        bluedp += 1;
+        dpnum2.innerText = `DP:${bluedp}`;
+    }
+}
+
+dpup1.addEventListener('click', () => dpincrease('red'));
+dpup2.addEventListener('click', () => dpincrease('blue'));
+
+function dpdecrease(color){
+    if (color==='red'){
+        reddp -= 1;
+        dpnum1.innerText = `DP:${reddp}`;
+    } else{
+        bluedp -= 1;
+        dpnum2.innerText = `DP:${bluedp}`;
+    }
 }
 
 
-.triangledown{
-    background-color: rgb(9, 65, 7);
+dpdown1.addEventListener('click', () => dpdecrease('red'));
+dpdown2.addEventListener('click', () => dpdecrease('blue'));
+
+
+function changemode(){
+    if (currentMode==='mob'){
+        menu2.style.transform = 'translate(-50%, -50%) rotate(0deg)';
+        currentMode = 'pc';
+        mobile.style.display = 'none';
+        pc.style.display = 'block';
+    } else {
+        menu2.style.transform = 'translate(-50%, -50%) rotate(180deg)';
+        currentMode = 'mob';
+        mobile.style.display = 'block';
+        pc.style.display = 'none';
+    }
 }
 
-#nosecret{
-    position: absolute;
-    top: 100%;
-}
-
-#pcmode{
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border-radius: 20px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 10%; 
-}
-
-#pc{
-    position: absolute;
-    font-size: 170%;
-    display: none;
-}
-
-#mobile{
-    position: absolute;
-    font-size: 170%;
-}
-
-#pcmode:hover{
-    filter: brightness(.9);
-}
-
-#pcmode:active{
-    filter: brightness(.7);
-}
+devicebutton.addEventListener('click', changemode);

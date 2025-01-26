@@ -31,6 +31,7 @@ const devicebutton = document.getElementById('pcmode')
 let currentMode = 'mob';
 const pc = document.getElementById('pc');
 const mobile = document.getElementById('mobile');
+const restartbutton = document.getElementById('restart');
 
 function changeteam(){
     if (currentteam==='1'){
@@ -40,6 +41,7 @@ function changeteam(){
         player.style.color = 'blue';
         menu2.style.scale = '1.1';
         menu1.style.scale = '1';
+        menu2.style.marginTop = '.8%';
     }else{
         player.textContent = 'P1';
         player.style.rotate = '0deg';
@@ -47,6 +49,7 @@ function changeteam(){
         currentteam = '1';
         menu2.style.scale = '1';
         menu1.style.scale = '1.1';
+        menu2.style.marginTop = '0%';
     }
 }
 
@@ -102,11 +105,33 @@ add500n2.addEventListener('click', () => changeadd2('500'));
 
 function lpdecrease(color){
     if (color==='red'){
-        redlp -= redadd;
-        lp1.innerText = `LP:${redlp}`;
+        if (redlp>0){
+            redlp -= redadd;
+            lp1.innerText = `LP:${redlp}`;
+            if (redlp<0){
+                redlp = 0;
+                lp1.innerText = 'LP:0';
+                alert('P1 Lost!')
+            }
+        } else{
+            redlp = 0;
+            lp1.innerText = 'LP:0';
+            alert('P1 Lost!')
+        }
     } else{
-        bluelp -= blueadd;
-        lp2.innerText = `LP:${bluelp}`;
+        if (bluelp>0){
+            bluelp -= blueadd;
+            lp2.innerText = `LP:${bluelp}`;
+            if (bluelp<0){
+                bluelp = 0;
+                lp2.innerText = 'LP:0';
+                alert('P2 Lost!')
+            }
+        } else{
+            bluelp = 0;
+            lp2.innerText = 'LP:0';
+            alert('P2 Lost!')
+        }
     }
 }
 
@@ -141,11 +166,15 @@ dpup2.addEventListener('click', () => dpincrease('blue'));
 
 function dpdecrease(color){
     if (color==='red'){
-        reddp -= 1;
-        dpnum1.innerText = `DP:${reddp}`;
+        if (reddp>0){
+            reddp -= 1;
+            dpnum1.innerText = `DP:${reddp}`;
+        }
     } else{
-        bluedp -= 1;
-        dpnum2.innerText = `DP:${bluedp}`;
+        if (bluedp>0){
+            bluedp -= 1;
+            dpnum2.innerText = `DP:${bluedp}`;
+        }
     }
 }
 
@@ -169,3 +198,38 @@ function changemode(){
 }
 
 devicebutton.addEventListener('click', changemode);
+
+function restart(){
+    if (confirm('Restart?')){
+        player.textContent = 'P1';
+        player.style.rotate = '0deg';
+        player.style.color = 'red';
+        currentteam = '1';
+        menu2.style.scale = '1';
+        menu1.style.scale = '1.1';
+
+        bluedp = 8;
+        dpnum2.innerText = `DP:${bluedp}`;
+        reddp = 8;
+        dpnum1.innerText = `DP:${reddp}`;
+
+        redlp = 2900;
+        lp1.innerText = `LP:${redlp}`;
+        bluelp = 2900;
+        lp2.innerText = `LP:${bluelp}`;
+
+        add50n2.style.backdropFilter = 'brightness(0.8)';
+        add100n2.style.backdropFilter = 'brightness(1)';
+        add500n2.style.backdropFilter = 'brightness(1)';
+        blueadd = 50;
+
+        add50n1.style.backdropFilter = 'brightness(0.8)';
+        add100n1.style.backdropFilter = 'brightness(1)';
+        add500n1.style.backdropFilter = 'brightness(1)';
+        redadd = 50;
+
+        menu2.style.marginTop = '0%';
+    }
+}
+
+restartbutton.addEventListener('click', restart);

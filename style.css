@@ -239,7 +239,8 @@ body{
     max-width: 600px;
     box-shadow: 3px 3px 10px 3px rgba(36, 23, 218, 0.74);
     scale: 1;
-    transition: scale 0.3s ease-in-out;
+    margin-top:  0%;
+    transition: scale 0.3s ease-in-out, margin-top 0.3s ease-in-out;
 }
 
 #dp2{
@@ -399,31 +400,6 @@ body{
     rotate: 180deg;
 }
 
-@media screen and (max-width: 500px) {
-    #lp2{
-        font-size: 30px;
-        flex-shrink: 1;
-        top: 10%;
-        position: relative;
-        margin-left: 5px;
-    }
-    #lp1{
-        position: relative;
-        top: 10%;
-        font-size: 30px;
-        flex-shrink: 1;
-        margin-left: 5px;
-    }
-    #lpmenu1{
-        margin-right: 2%;
-    }
-    #lpmenu2{
-        margin-right: 2%;
-    }
-    #add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
-        font-size: 2px;
-    }
-}
 
 #add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
     font-size: 13px;
@@ -474,4 +450,61 @@ body{
 
 #pcmode:active{
     filter: brightness(.7);
+}
+
+#restart{
+    position: absolute;
+    background-color: red;
+    border: none;
+    color: ghostwhite;
+    bottom: 0;
+    right: 0;
+    height: 80px;
+    width: 120px;
+    font-size: 130%;
+    max-height: 4%;
+    max-width: 23%;
+    border-radius: 5px;
+}
+
+#restart:hover{
+    background-color: rgb(219, 19, 19);
+}
+
+#restart:active{
+    background-color: rgb(173, 44, 44);
+}
+@media screen and (max-width: 500px) {
+    #lp2{
+        font-size: 30px;
+        flex-shrink: 1;
+        top: 10%;
+        position: relative;
+        margin-left: 5px;
+    }
+    #lp1{
+        position: relative;
+        top: 10%;
+        font-size: 30px;
+        flex-shrink: 1;
+        margin-left: 5px;
+    }
+    #lpmenu1{
+        margin-right: 2%;
+    }
+    #lpmenu2{
+        margin-right: 2%;
+    }
+    #add50n1, #add50n2, #add100n1, #add100n2, #add500n1, #add500n2{
+        font-size: 13px;
+    }
+
+    #pcmode{
+        right: 0%;
+        top: 0%;
+        transform: none;
+        height: 40px;
+        width: 40px;
+        border-radius: 4px;
+    }
 }
